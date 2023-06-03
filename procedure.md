@@ -1,4 +1,6 @@
 # Microsoft Sentinel (SIEM) Lab
+This lab is built on Microsoft Azure.
+
 ## Components
 <p></p>
 <b>Microsoft Azure:</b>
@@ -8,7 +10,7 @@
 3. **Microsoft Sentinel (SIEM)** - Data Visualization
 
 ## Procedure
-### 1 - On Azure go to Virtual machines
+## 1 - On Azure go to Virtual machines
 - Click on **Create** > **Azure virtual machine**
 
 ### Create a virtual machine
@@ -85,7 +87,7 @@
     - **Subscription credits apply:** 0.0960 USD/hr
     - Click **Create**
 
-### 2 - On Azure go to Resources groups
+## 2 - On Azure go to Resources groups
 - Just check the resources created.
 - **Honeypotlab**
     - **Resources:**
@@ -96,7 +98,7 @@
         - honeypot-vm_disk1_34ff... (Disk)
         - Honeypotlab-vnet (Virtual networks)
 
-### 3 - On Azure go to Log Analytics workspaces
+## 3 - On Azure go to Log Analytics workspaces
 - Click on **Create**
 ### Create Log Analytics workspace
 - **Tab: Basics**
@@ -110,7 +112,7 @@
 - **Tab: Review + Create**
     - Click **Create**
 
-### 4 - On Azure go to Microsoft Defender for Clouds | Environment Settings
+## 4 - On Azure go to Microsoft Defender for Clouds | Environment Settings
 On the table click on **law-honeypot1:**
 - Azure
   - Tenant Root Group (1 of 1 subscriptions)
@@ -126,32 +128,32 @@ On the table click on **law-honeypot1:**
     - Select **All Events**
 - Click on **Save**
 
-### 5 - On Azure go to Log Analytics workspace
+## 5 - On Azure go to Log Analytics workspace
 ### law-honeypot1 | Virtual machines
 - Click on **honeypot-vm**
     - Click on **Connect**
 
-### 6 - On Azure go to Microsoft Sentinel
+## 6 - On Azure go to Microsoft Sentinel
 - Click on **Create**
 ### Add Microsoft Sentinel to a workspace
 - Select **law-honeypot1 Workspace**
 - Click **Add**
 
-### 7 - On Azure go to Virtual machines
+## 7 - On Azure go to Virtual machines
 - Click on **honeypot-vm**
   - Copy **public IP address** 20.125.146.48
 
-### 8 - Use Remote Desktop Connection to connect to the virtual machine using the public IP address and the credentials defined
+## 8 - Use Remote Desktop Connection to connect to the virtual machine using the public IP address and the credentials defined
 - Disable all privacy settings on the device.
 - Allow PC to be discoverable.
 - Open `Event Viewer` and go to Windows Logs > Security and search for:
     - Event ID: 4625; Task Category: Logon; Keywords: Audit Failure
 
-### 9 - From local computer ping virtual machine
+## 9 - From local computer ping virtual machine
 `$ ping 20.125.146.48`
 - The VM will not reply.
 
-### 10 - On the virtual machine disable the Firewall.
+## 10 - On the virtual machine disable the Firewall.
 - Open `wf.msc`
     - Click on **Windows Defender Firewall Properties**
         - **Tab: Domain Profile**
@@ -161,21 +163,21 @@ On the table click on **law-honeypot1:**
         - **Tab: Public Profile**
             - Firewall state: off
 
-### 11 - From local computer ping virtual machine
+## 11 - From local computer ping virtual machine
 `$ ping 20.125.146.48`
 - Now the VM should reply.
 
-### 12 - On the PowerShell console download the powershell script from `joshmadakor1/Sentinel-Lab/Custom_Security_Log_Exporter.ps1` with the command below
+## 12 - On the PowerShell console download the powershell script from `joshmadakor1/Sentinel-Lab/Custom_Security_Log_Exporter.ps1` with the command below
 `PS \> Invoke-WebRequest "https://raw.githubusercontent.com/joshmadakor1/Sentinel-Lab/main/Custom_Security_Log_Exporter.ps1" -OutFile Custom_Security_Log_Exporter.ps1`
 
-### 13 - Open the `Custom_Security_Log_Exporter.ps1` script on PowerShell ISE as Administrator
+## 13 - Open the `Custom_Security_Log_Exporter.ps1` script on PowerShell ISE as Administrator
 
-### 14 - Get the free API access key from https://ipgeolocation.io, replace it on the powershell script, save it, and run the script
+## 14 - Get the free API access key from https://ipgeolocation.io, replace it on the powershell script, save it, and run the script
 - Try to login the VM with wrong credentials a couple of times to see the messages on the PowerShell console.
 
-### 15 - Copy the output file `failed_rdp.log` at `C:\ProgramData\failed_rdp.log` to your local machine to be opened on Azure later.
+## 15 - Copy the output file `failed_rdp.log` at `C:\ProgramData\failed_rdp.log` to your local machine to be opened on Azure later.
 
-### 16 - On Azure go to Log Analytics workspace
+## 16 - On Azure go to Log Analytics workspace
 - Click on **law-honeypot1**
 ### law-honeypot1 | Tables
 - Click on **Create** > **New custom log (MMA-based)**
@@ -226,13 +228,13 @@ FAILED_RDP_WITH_GEO_CL
 - Click Run
 - Should return a few events
 
-### 17 - Extract fields using a query piped with parse and project.
+## 17 - Extract fields using a query piped with parse and project.
 **New Query 1*** <br/>
 FAILED_RDP_WITH_GEO_CL <br/>
 | **parse** RawData with "latitude:" latitude_CF ",longitude:" longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF <br/>
 | **project** TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData
 
-### 18 - On Azure go to Microsoft Sentinel
+## 18 - On Azure go to Microsoft Sentinel
 - Click on **law-honeypot1**
 ### Microsoft Sentinel | Logs
 <p></p>
@@ -284,7 +286,7 @@ TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,
     - **Size:** Full
 - **Save**
     - **Title:** Failed RDP World Map
-    - **Subscription:** <your subscription>
+    - **Subscription:** your_subscription
     - **Resource group:** Honeypotlab
     - **Location:** (US) West US 3
     - (uncheck) **Save content to an Azure Storage Account.**
