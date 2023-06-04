@@ -10,7 +10,7 @@ This lab was adapted from [here](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1
 
 ## Highlighs
 ### 1. Windows 11 VM on Microsoft Azure.
-<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/1-honeypot-vm.png" width="720" height="405" />
+<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/1-honeypot-vm.png" width="1024" height="505" />
 
 ### 2. PowerShell script extracting failed log attempts from Event Viwer.
 <img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/2-powershell-script.png" width="1024" height="576" />
