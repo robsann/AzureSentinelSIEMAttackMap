@@ -26,10 +26,10 @@ This lab was adapted from [here](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1
 
 ### 6. Microsoft Sentinal map visualization of the failed RDP login attempts using KQL to query the data.
 #### 6a. After 1 hour of exposure.
-<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/6-sentinel-map-1h.png" width="1024" height="576" />
+<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/6a-sentinel-map-1h.png" width="1024" height="576" />
 
 #### 6b. After 24 hours of exposure.
-<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/7-sentinel-map-24h.png" width="1024" height="576" />
+<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/6b-sentinel-map-24h.png" width="1024" height="576" />
 
 #### 6c. After 48 hours of exposure.
-<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/8-sentinel-map-48h.png" width="1024" height="576" />
+<img src="https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/images/6c-sentinel-map-48h.png" width="1024" height="576" />
