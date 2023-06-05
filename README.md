@@ -7,10 +7,10 @@
 
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md). This lab was adapted from [here](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
-## Highlighs
 ### Lab Diagram
 <img src="images/diagram.png" title="Lab Diagram"/>
 
+## Highlighs
 ### 1. Windows 10 VM on Microsoft Azure.
 <img src="images/1-honeypot-vm.png" title="honepot-vm"/>
 
