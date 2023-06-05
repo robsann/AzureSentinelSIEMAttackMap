@@ -29,18 +29,18 @@ The procedures to build this lab can be found [here](https://github.com/robsann/
 #### 3c. API data gathering.
 <img src="images/3c-api-data-gather.png" title="API data gather"/>
 
-### 4. The PowerShell script output, `failed_rdp.log`, that will be ingested by Log Analytics Workspace on Microsoft Azure.
-<img src="images/4-failed_rdp.log.png" title="Failed RDP Log"/>
+### 3d. The PowerShell script output, `failed_rdp.log`, that will be ingested by Log Analytics Workspace on Microsoft Azure.
+<img src="images/3d-failed_rdp.log.png" title="Failed RDP Log"/>
 
-### 5. Log Analytics Workspace using KQL to query the data from the table `FAILED_RDP_WITH_GEO_CL` created using `failed_rdp.log` that is imported in real-time from the VM.
-<img src="images/5-law-honeypot1-logs.png" title="law-honeypot1-logs"/>
+### 4. Log Analytics Workspace using KQL to query the data from the table `FAILED_RDP_WITH_GEO_CL` created using `failed_rdp.log` that is imported in real-time from the VM.
+<img src="images/4-law-honeypot1-logs.png" title="law-honeypot1-logs"/>
 
-### 6. Microsoft Sentinal map visualization of the failed RDP login attempts using KQL to query the data from the table `FAILED_RDP_WITH_GEO_CL`.
-#### 6a. After 1 hour of exposure.
-<img src="images/6a-sentinel-map-1h.png" title="Sentinel map 1h"/>
+### 5. Microsoft Sentinal map visualization of the failed RDP login attempts using KQL to query the data from the table `FAILED_RDP_WITH_GEO_CL`.
+#### 5a. After 1 hour of exposure.
+<img src="images/5a-sentinel-map-1h.png" title="Sentinel map 1h"/>
 
-#### 6b. After 24 hours of exposure.
-<img src="images/6b-sentinel-map-24h.png" title="Sentinel map 24h"/>
+#### 5b. After 24 hours of exposure.
+<img src="images/5b-sentinel-map-24h.png" title="Sentinel map 24h"/>
 
-#### 6c. After 48 hours of exposure.
-<img src="images/6c-sentinel-map-48h.png" title="Sentinel map 48h"/>
+#### 5c. After 48 hours of exposure.
+<img src="images/5c-sentinel-map-48h.png" title="Sentinel map 48h"/>
