@@ -11,7 +11,7 @@ The procedures to build this lab can be found [here](https://github.com/robsann/
 <img src="images/diagram.png" title="Lab Diagram"/>
 
 ## Highlighs
-### 1. Windows 10 VM on Microsoft Azure.
+### 1. Windows 10 VM on Microsoft Azure that can be accessed using RDP.
 <img src="images/1-honeypot-vm.png" title="honepot-vm"/>
 
 ### 1. Windows Defender Firewall disabled.
