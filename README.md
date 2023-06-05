@@ -1,8 +1,8 @@
 ## Microsoft Sentinel (SIEM) Attack Map
 - Configured an exposed Windows 10 VM in Azure to monitor failed RDP login attempts from Global Attackers using Microsoft Sentinel (SIEM).
-- Windows 10 VM has Firewall disabled and RDP port (3389) open. A custom PowerShell script extracted failed login events from the Event Viewer's Security Log, forwarded them to a third-party API to get geolocation data, and generated a log file (`failed_rdp.log`) with geolocation and event data.
-- Created a custom table (`FAILED_RDP_WITH_GEO_CL`) using `failed_rdp.log` in Log Analytics Workspace on Azure containing geographic information (latitude, longitude, state, and country) and event information (workstation name, account name, and IP address ) and queried the table to extract the custom fields from RawData using Kusto Query Language (KQL).
-- Configured a Microsoft Sentinel (SIEM) workbook to display Global Attackers' data (failed RDP login attempts) on the world map according to physical location and magnitude (count) of attacks using Kusto Query Language (KQL) to query the data from the `FAILED_RDP_WITH_GEO_CL` table.
+- Windows 10 VM has Firewall disabled and RDP port (3389) open. A custom PowerShell script extracted failed login events from the Event Viewer's Security Log, forwarded them to a third-party API to get geolocation data, and generated a log file with geolocation and event data.
+- Created a custom table in Log Analytics Workspace on Azure using the previously generated log file containing geographic information (latitude, longitude, state, and country) and event information (workstation name, account name, and IP address) and queried the table to extract custom fields from RawData using Kusto Query Language (KQL).
+- Configured a Microsoft Sentinel (SIEM) workbook to display Global Attackers' data (failed RDP login attempts) on the world map according to physical location and magnitude (count) of attacks using Kusto Query Language (KQL) to query the data from the table created in Log Analytics Workspace.
 
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md).
 
