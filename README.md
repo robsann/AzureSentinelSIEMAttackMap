@@ -5,7 +5,7 @@
 - Created a custom table (`FAILED_RDP_WITH_GEO_CL`) in Log Analytics Workspace on Microsoft Azure, using `failed_rdp.log` and containing geographic information (latitude, longitude, state, and country) and event information (workstation name, account name, and IP address ), and queried the table to extract the custom fields from RawData using Kusto Query Language (KQL).
 - Configured a Microsoft Sentinel (SIEM) workbook to display Global Attackers' data (failed RDP login attempts) on the world map according to physical location and magnitude (count) of attacks using Kusto Query Language (KQL) to query the data from the `FAILED_RDP_WITH_GEO_CL` table.
 
-The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md). This lab was adapted from [here](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
+The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md) and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
 ### Lab Diagram
 <img src="images/diagram.png" title="Lab Diagram"/>
