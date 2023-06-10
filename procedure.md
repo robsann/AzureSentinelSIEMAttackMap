@@ -229,23 +229,14 @@ FAILED_RDP_WITH_GEO_CL
 - Should return a few events
 
 ## 17 - Extract fields using a query piped with parse and project.
-**New Query 1*** <br/>
-FAILED_RDP_WITH_GEO_CL <br/>
-| **parse** RawData with "latitude:" latitude_CF ",longitude:" longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF <br/>
-| **project** TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData
-
+**New Query 1***
+```
+FAILED_RDP_WITH_GEO_CL
+| RawData with "latitude:" latitude_CF ",longitude:" longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF
+| TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData
+```
 ## 18 - On Azure go to Microsoft Sentinel
 - Click on **law-honeypot1**
-### Microsoft Sentinel | Logs
-<p></p>
-<b>New Query 1*</b> <br/>
-union FAILED_RDP_WITH_GEO_CL <br/>
-| **parse** RawData with "latitude:" latitude_CF ",longitude:"
-longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF <br/>
-| **project**
-TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData
-
-- Click **Run**
 
 ### Microsoft Sentinel | Workbooks
 - Add **workbook**
@@ -254,15 +245,15 @@ TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,
     - **Remove text**
     - **Remove query**
     - **Add > Add query**
-        - **Log Analytics workspace Logs Query** <br/>
+        - **Log Analytics workspace Logs Query**
             ```
-            FAILED_RDP_WITH_GEO_CL <br/>
-            | **parse** RawData with "latitude:" latitude_CF ",longitude:" longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF <br/>
-            | **project** TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData <br/>
-            | **where** TimeGenerated > datetime(2023-06-01 02:03:46) and TimeGenerated < datetime(2023-06-03 02:03:46)
-            | **summarize** event_count=count() by sourcehost_CF, latitude_CF, longitude_CF, country_CF, label_CF, destinationhost_CF <br/>
-            | **where** destinationhost_CF != "samplehost" <br/>
-            | **where** sourcehost_CF != ""
+            FAILED_RDP_WITH_GEO_CL
+            | parse RawData with "latitude:" latitude_CF ",longitude:" longitude_CF ",destinationhost:" destinationhost_CF ",username:" username_CF ",sourcehost:" sourcehost_CF ",state:" state_CF ",country:" country_CF ",label:" label_CF ",timestamp:" timestamp_CF
+            | project TimeGenerated,Computer,timestamp_CF,latitude_CF,longitude_CF,destinationhost_CF,username_CF,sourcehost_CF,state_CF,country_CF,label_CF,Type,RawData
+            | where TimeGenerated > datetime(2023-06-01 02:03:46) and TimeGenerated < datetime(2023-06-03 02:03:46)
+            | summarize event_count=count() by sourcehost_CF, latitude_CF, longitude_CF, country_CF, label_CF, destinationhost_CF
+            | where destinationhost_CF != "samplehost"
+            | where sourcehost_CF != ""
             ```
         - **Run Query**
         - **Set Visualization:** Map
