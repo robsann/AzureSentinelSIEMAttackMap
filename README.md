@@ -44,3 +44,6 @@ The procedures to build this lab can be found [here](https://github.com/robsann/
 
 #### 5c. After 48 hours of exposure.
 <img src="images/5c-sentinel-map-48h.png" title="Sentinel map 48h"/>
+
+#### 6. Top 10 usernames used by attackers.
+<img src="images/6-TopUsernames.png" title="Top 10 Usernames"/>
