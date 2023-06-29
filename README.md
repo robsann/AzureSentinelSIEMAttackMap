@@ -14,7 +14,7 @@ The procedures to build this lab can be found [here](https://github.com/robsann/
 ### 1. Windows 10 VM on Microsoft Azure that can be accessed using RDP.
 <img src="images/1-honeypot-vm.png" title="honepot-vm"/>
 
-### 1. Windows Defender Firewall disabled.
+### 2. Windows Defender Firewall disabled.
 <img src="images/2-windows-firewall.png" title="Windows Defender Firewall"/>
 
 ### 3. PowerShell script extracting failed login attempts from Event Viwer.
