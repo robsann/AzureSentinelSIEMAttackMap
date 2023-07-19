@@ -1,9 +1,9 @@
 ## Microsoft Sentinel (SIEM) Attack Map
 ### Overview
-- Configured an exposed Windows 10 VM in Microsoft Azure to monitor failed RDP login attempts from Global Attackers using Microsoft Sentinel (SIEM).
-- Windows 10 VM has Firewall disabled and RDP port (3389) open. A custom PowerShell script extracted failed login events from the Event Viewer's Security Log, forwarded them to a third-party API to get geolocation data, and generated a log file (`failed_rdp.log`) with geolocation and event data.
-- Created a custom table (`FAILED_RDP_WITH_GEO_CL`) in Log Analytics Workspace on Microsoft Azure, using `failed_rdp.log` and containing geographic information (latitude, longitude, state, and country) and event information (workstation name, account name, and IP address ), and queried the table to extract the custom fields from RawData using Kusto Query Language (KQL).
-- Configured a Microsoft Sentinel (SIEM) workbook to display Global Attackers' data (failed RDP login attempts) on the world map according to physical location and magnitude (count) of attacks using Kusto Query Language (KQL) to query the data from the `FAILED_RDP_WITH_GEO_CL` table.
+- Configured an exposed Windows 10 VM (with firewall disabled and RDP port 3389 open) in Microsoft Azure to monitor failed RDP login attempts from Global Attackers using Microsoft Sentinel (SIEM).
+- Used a custom PowerShell script that extracts failed login events from Event Viewer Security Log, forwards them to a third-party API to get geolocation data, and generates a log file (`failed_rdp.log`) with geolocation and event data.
+- Created a custom table (`FAILED_RDP_WITH_GEO_CL`) in Log Analytics Workspace on Microsoft Azure using the previously generated log file (`failed_rdp.log`) and queried the table to extract custom fields from RawData using Kusto Query Language (KQL).
+- Created a workbook in Microsoft Sentinel (SIEM) using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display Global Attacker's data (RDP login failure) on the world map according to physical location and magnitude (attack count).
 
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md) and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
