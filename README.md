@@ -1,9 +1,9 @@
 ## Microsoft Sentinel (SIEM) Attack Map
 ### Overview
-- Configured an exposed Windows 10 VM (with firewall disabled and RDP port 3389 open) in Microsoft Azure to monitor failed RDP login attempts from Global Attackers using Microsoft Sentinel (SIEM).
-- Used a custom PowerShell script that extracts failed login events from Event Viewer Security Log, forwards them to a third-party API to get geolocation data, and generates a log file (`failed_rdp.log`) with geolocation and event data.
-- Created a custom table (`FAILED_RDP_WITH_GEO_CL`) in Log Analytics Workspace on Microsoft Azure using the previously generated log file (`failed_rdp.log`) and queried the table to extract custom fields from RawData using Kusto Query Language (KQL).
-- Created a workbook in Microsoft Sentinel (SIEM) using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display Global Attacker's data (RDP login failure) on the world map according to physical location and magnitude (attack count).
+- Microsoft Sentinel (SIEM) was used to monitor failed RDP login attempts from global attackers on an exposed Windows 10 VM configured in Microsoft Azure.
+- A custom log file (`failed_rdp.log`) was generated using a PowerShell script that extracts failed login events from Event Viewer Security Log and forwards them to a third-party API to get geolocation data.
+- A custom table (`FAILED_RDP_WITH_GEO_CL`) was created in Log Analytics Workspace on Microsoft Azure using the generated log file (`failed_rdp.log`), and the table was queried to extract custom fields from RawData using Kusto Query Language (KQL).
+- A workbook was created in Microsoft Sentinel (SIEM) using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display global attackers (RDP login failure) on the world map according to physical location and magnitude (attack count).
 
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md) and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
