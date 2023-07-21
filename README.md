@@ -45,7 +45,7 @@ Use the IP address extracted from Event Viewer to make web requests to the geolo
 
 
 ### 2.2 - The PowerShell Script Extracting Failed Login Attempts
-The PowerShell ISE shows the PowerShell script created to extract failed login attempts from Event Viewer running and outputting to the terminal the detected failed login attempts.
+The PowerShell ISE, with the PowerShell script created to extract failed login attempts from Event Viewer running and outputting to the terminal the detected failed login attempts.
 
 <img src="images/3-powershell-script.png" title="PowerShell script + Event Viwer"/>
 
