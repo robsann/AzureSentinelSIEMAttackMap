@@ -1,4 +1,4 @@
-# Microsoft Sentinel (SIEM) Attack Map
+# Attack Monitoring with Microsoft Sentinel (SIEM)
 The purpose of this lab is to utilize Microsoft Sentinel (SIEM) in order to keep track of unsuccessful RDP login attempts made by attackers from around the world on a Windows 10 virtual machine (VM) that has been exposed and set up in Microsoft Azure.
 
 ## Summary
