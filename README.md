@@ -1,15 +1,16 @@
 # Microsoft Sentinel (SIEM) Attack Map
 The purpose of this lab is to utilize Microsoft Sentinel (SIEM) in order to keep track of unsuccessful RDP login attempts made by attackers from around the world on a Windows 10 virtual machine (VM) that has been exposed and set up in Microsoft Azure.
 
-## Overview
+## Summary
 - Microsoft Sentinel (SIEM) was used to monitor failed RDP login attempts from global attackers on an exposed Windows 10 VM configured in Microsoft Azure.
 - A custom log file (`failed_rdp.log`) was generated using a PowerShell script that extracts failed login events from Event Viewer Security Log and forwards them to a third-party API to get geolocation data.
 - A custom table (`FAILED_RDP_WITH_GEO_CL`) was created in Log Analytics Workspace on Microsoft Azure using the generated log file (`failed_rdp.log`), and the table was queried to extract custom fields from RawData using Kusto Query Language (KQL).
 - A workbook was created in Microsoft Sentinel (SIEM) using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display global attackers (RDP login failure) on the world map according to physical location and magnitude (attack count).
 
+## Procedure
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md), and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
-## Lab Diagram
+## Diagram
 <img src="images/diagram.png" title="Lab Diagram"/>
 
 # Highlighs
