@@ -18,7 +18,7 @@ The procedures to build this lab can be found [here](https://github.com/robsann/
 ## 1 - The Virtual Machine on Microsoft Azure
 
 ### 1.1 - The Virtual Machine Configuration
-Here is the information about the virtual machine created on Microsoft Azure. The virtual machine was named "honeypot-vm" and runs the Windows 10 operating system. Information about the virtual machine can be found on this screen, such as the computer name, operating system, public and private IP addresses, and the hardware used. Furthermore, the virtual machine can be accessed via RDP.
+Here is the information about the virtual machine created on Microsoft Azure. The virtual machine was named `honeypot-vm` and runs the Windows 10 operating system. Information about the virtual machine can be found on this screen, such as the computer name, operating system, public and private IP addresses, and the hardware used. Furthermore, the virtual machine can be accessed via RDP.
 
 <img src="images/1-honeypot-vm.png" title="honepot-vm"/>
 
