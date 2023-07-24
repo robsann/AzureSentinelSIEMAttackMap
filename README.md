@@ -2,8 +2,8 @@
 The purpose of this lab is to utilize Microsoft Sentinel to keep track of unsuccessful Remote Desktop Protocol (RDP) login attempts made by attackers worldwide on an exposed Windows 10 virtual machine set up in Microsoft Azure. The failed login events and geolocation data are extracted using a PowerShell script on the virtual machine, processed using the Log Analytics Workspace on Microsoft Azure, and visualized in Microsoft Sentinel on Microsoft Azure.
 
 ## Summary
-- Microsoft Sentinel was used to monitor failed RDP login attempts from global attackers on an exposed Windows 10 VM configured in Microsoft Azure.
-- A custom log file (`failed_rdp.log`) was generated using a PowerShell script that extracts failed login events from Event Viewer Security Log and forwards them to a third-party API to get geolocation data.
+- Microsoft Sentinel was used to monitor failed RDP login attempts from global attackers on an exposed Windows 10 virtual machine configured in Microsoft Azure.
+- A custom log file (`failed_rdp.log`) was generated using a PowerShell script that extracts failed login events from Security Log on Event Viewer and forwards them to a third-party API to get geolocation data.
 - A custom table (`FAILED_RDP_WITH_GEO_CL`) was created in Log Analytics Workspace on Microsoft Azure using the generated log file (`failed_rdp.log`). The table was queried to extract custom fields from raw data using Kusto Query Language (KQL).
 - A workbook was created in Microsoft Sentinel using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display global attackers (RDP login failure) on the world map according to physical location and magnitude (attack count).
 
