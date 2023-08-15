@@ -7,6 +7,15 @@ The purpose of this lab is to utilize Microsoft Sentinel to keep track of unsucc
 - A custom table (`FAILED_RDP_WITH_GEO_CL`) was created in Log Analytics Workspace on Microsoft Azure using the generated log file (`failed_rdp.log`). Custom fields were extracted from the table using a Kusto Query Language (KQL) query.
 - A workbook was created in Microsoft Sentinel using KQL to query data from the `FAILED_RDP_WITH_GEO_CL` table to display global attackers (RDP login failure) on the world map according to physical location and magnitude (attack count).
 
+## Tools
+- **Kali Linux**
+  - **Microsoft Azure**
+    - **Windows 10 VM**
+      - **PowerShell script**
+    - **Log Analytics Workspace**
+    - **Microsoft Sentinel**
+  - **Remmina (RDP Client)**
+
 ## Procedure
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md), and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
 
