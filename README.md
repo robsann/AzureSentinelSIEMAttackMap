@@ -9,12 +9,12 @@ The purpose of this lab is to utilize Microsoft Sentinel to keep track of unsucc
 
 ## Tools
 - **Kali Linux**
+  - **Remmina (RDP Client)**
   - **Microsoft Azure**
     - **Windows 10 VM**
       - **PowerShell script**
     - **Log Analytics Workspace**
     - **Microsoft Sentinel**
-  - **Remmina (RDP Client)**
 
 ## Procedure
 The procedures to build this lab can be found [here](https://github.com/robsann/AzureSentinelSIEMAttackMap/blob/main/procedure.md), and it was adapted from [Josh Madakor](https://www.youtube.com/watch?v=RoZeVbbZ0o0&t=1544s&ab_channel=JoshMadakor-Tech%2CEducation%2CCareer).
