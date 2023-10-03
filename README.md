@@ -1,4 +1,5 @@
 # Attack Monitoring with Microsoft Sentinel (SIEM)
+<div align="justify">
 The purpose of this lab is to utilize Microsoft Sentinel to keep track of unsuccessful Remote Desktop Protocol (RDP) login attempts made by attackers worldwide on an exposed Windows 10 virtual machine set up in Microsoft Azure. The failed login events and geolocation data are extracted using a PowerShell script on the virtual machine, processed using the Log Analytics Workspace on Microsoft Azure, and visualized in Microsoft Sentinel on Microsoft Azure.
 
 ## Summary
@@ -94,3 +95,5 @@ Over a 48-hour period, there were a significant number of failed RDP login attem
 This bar plot displays the top 10 usernames most frequently used by attackers, obtained from the `FAILED_RDP_WITH_GEO_CL` table through a KQL query. The most commonly used username is `ADMINISTRATOR`, followed by `ADMIN`, `administrator`, `Administrator`, and `admin`.
 
 <img src="images/6-TopUsernames.png" title="Top 10 Usernames"/>
+
+</div>
