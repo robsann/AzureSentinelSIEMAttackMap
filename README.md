@@ -58,8 +58,6 @@ The IP address, extracted from the Security Log within Event Viewer, was utilize
 <img src="images/3c-api-data-gather.png" title="API data gather"/>
 
 ### 2.2 - The PowerShell Script Extracting Failed Login Attempts
-Below is the PowerShell ISE, with the PowerShell script used to extract failed login attempts from Security Log in Event Viewer running and outputting to the terminal the detected failed login attempts. At the right is an example of a failed login attempt event on Event Viewer. Some relevant fields are `Account Name`, the used username, `Source Network Address`, the attacker IP address, `Event ID`, `Logged`, and `Computer`.
-
 Below is the PowerShell ISE, with the PowerShell script used to extract failed login attempts from the Security Log in Event Viewer running and outputting to the terminal the detected failed login attempts. On the right is an example of a failed login attempt event in Event Viewer. Some relevant fields are `Account Name`, which shows the used username, `Source Network Address`, indicating the attacker's IP address, `Event ID`, `Logged`, and `Computer`.
 
 <img src="images/3-powershell-script.png" title="PowerShell script + Event Viwer"/>
